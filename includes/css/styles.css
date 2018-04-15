@@ -1,0 +1,181 @@
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+/* --------------------------------------
+   Contact
+   -------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+$font-stack: 'Lato', Lato, Open Sans, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$bs: 0 2px 4px rgba(0, 0, 0, .10), 0 4px 6px rgba(0, 0, 0, .12);
+$trans: all 0.3s ease;
+
+body {
+  font-family: $font-stack;
+  background: url('http://i.imgur.com/lJOMNeJ.png');
+}
+
+.form__container {
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 16px;
+  padding: 32px;
+  box-shadow: $bs;
+  border-radius: 4px;
+}
+
+//social media colors
+$colors: (
+	"instagram": "#3f729b",
+	"twitter": "#3CF",
+  "github": #4183c4,
+  "codepen": #1D1F20
+);
+
+.gutter {
+  height: 32px;
+}
+
+.footer__social {	
+	height: 68px;
+	text-align: center;
+	opacity: 1;
+	transition: $trans;
+  line-height: 70px;
+  
+	.fa {
+		vertical-align: middle;
+		transition: $trans;
+	}
+	
+	@each $class,$color in $colors {
+		
+		&.#{$class} {
+			
+			&:hover {
+				background-color: #{$color};
+			}
+			
+			.fa {
+				color: #{$color};
+			}
+		}
+	}
+	
+	&:hover {
+		
+		.fa {
+			color: #fff;
+		}
+	}
+	
+	&:focus {
+		opacity: .85;
+	}
+}
+
+@media(max-width:767px){
+  .form__container {
+    margin: 0;
+    padding: 16px;
+  }
+}
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+   
+ #searchInput {
+    width: 200px;
+ }
+   
+.navbar-brand {
+    padding: 1px 0px !important;
+    margin-left: -20px !important;
+}
+
+.portraits {
+    padding-left: 50px !important;
+}
+
+.dropdown-menu {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* --------------------------------------
+   Photo Grid
+   -------------------------------------- */
+
+#photogrid {
+    margin-top: 60px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+/* --------------------------------------
+   About Me
+   -------------------------------------- */
+
+#aboutme {
+    margin-top: 60px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+	
+	.thumbnail.about h1 {
+		font-size: 24px;
+	}
+        
+        .thumbnail.about p {
+		font-size: 16px;
+	}
+	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	
+	.thumbnail.about h1 {
+		font-size: 34px;
+	}
+        
+        .thumbnail.about p {
+		font-size: 12px;
+	}
+	
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	#myCarousel .item { height: 500px; }
+	
+	#slide1 {
+		background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+	}
+	
+	#slide2 {
+		background: url('../../images/carousel_large_02.jpg') top center no-repeat;
+	}
+	
+	#slide3 {
+		background: url('../../images/carousel_large_03.jpg') top center no-repeat;
+	}
+
+}
